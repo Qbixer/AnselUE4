@@ -4,8 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "JsonLoader.generated.h"
+#include "Components/InstancedStaticMeshComponent.h"
 
+#include "JsonLoader.generated.h"
 UCLASS()
 class ANSELCODE_API AJsonLoader : public AActor
 {
@@ -23,6 +24,7 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	
+	UPROPERTY(EditAnywhere)
+	TArray<UStaticMesh*> meshes;
 	
 };
